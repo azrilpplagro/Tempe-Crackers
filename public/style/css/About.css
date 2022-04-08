@@ -1,0 +1,48 @@
+nav{
+  z-index: 0;
+}
+
+.floating-button{
+  bottom: 1.2cm;
+  right: 0.6cm;
+  margin: 0.2cm;
+  cursor: pointer;
+  position: fixed;
+  z-index: 100;
+  width: 1.5cm;
+  background-color: rgb(119, 174, 238);
+  height: 1.5cm;
+  display: flex;
+  justify-content: center;
+  border-radius: 1.5cm;
+  
+}
+.floating-button h1{
+  margin: auto;
+  color: white;
+}
+
+.floating-button:hover{
+  background-color: rgb(145, 189, 240);
+}
+.floating-button:active{
+  box-shadow: 0.05rem 0.1rem 0.3rem 0.08rem rgba(0, 0, 0, 0.45);
+}
+
+.form-comment{
+  cursor: pointer;
+  z-index: 10000000000;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form-comment .form-background{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+}
