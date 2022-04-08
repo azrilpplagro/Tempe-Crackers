@@ -59,8 +59,6 @@ $photo = $this->model("User_model")->get_data_user($_SESSION['login']['email'])[
       <?php
       }
       ?>
-      
-      
     </a>
     <!-- <img style="cursor:pointer" src="<?= BASE_URL ?>/icon/dropdown.png" alt=""> -->
     <form action="" method="POST">

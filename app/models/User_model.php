@@ -158,7 +158,7 @@ class User_model{
   public function upload_gambar($name,$email){
     $query = "UPDATE $this->table SET profil = :profil WHERE email = :email";
     $this->db->query($query);
-    $this->db->bind('name',$name);
+    $this->db->bind('profil',$name);
     $this->db->bind('email',$email);
     $this->db->execute();
 

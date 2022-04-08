@@ -123,10 +123,13 @@ class About extends Controller{
     if(isset($_FILES['img_upload'])){
       if ( $_FILES['img_upload']['name'] != "" ){
         $photo = $this->model("User_model")->get_data_user($_SESSION['login']['email'])['profil'];
-        if(file_exists(realpath($_SERVER["DOCUMENT_ROOT"])."/Tempe-Crackers/public/img/$photo")){
-          unlink(realpath($_SERVER["DOCUMENT_ROOT"])."/Tempe-Crackers/public/img/$photo");
+        if($photo == ""){
+          $this->uploadImg();
         }
-        $this->uploadImg();
+        else if(file_exists(realpath($_SERVER["DOCUMENT_ROOT"])."/Tempe-Crackers/public/img/$photo")){
+          unlink(realpath($_SERVER["DOCUMENT_ROOT"])."/Tempe-Crackers/public/img/$photo");
+          $this->uploadImg(); 
+        }
       }
     }
       
@@ -174,6 +177,7 @@ class About extends Controller{
         if($formatFile == 'image/jpeg' || $formatFile == 'image/png'){
           $path = realpath($_SERVER["DOCUMENT_ROOT"])."/Tempe-Crackers/public/img";
           move_uploaded_file($locationUp,$path.'/'.$nameFix);
+          $this->model("User_model")->upload_gambar($nameFix,$_SESSION['login']['email']);
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => true,
             "title" => "Success",

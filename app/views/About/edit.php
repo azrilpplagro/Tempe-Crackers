@@ -13,8 +13,6 @@
                 <img src="<?= BASE_URL ?>/icon/null_photo.png" style="width: 50px;cursor:pointer" alt="">
               </button>
             </form>
-            
-            
           </td>
         </tr>
         <input type="hidden" name="email" value="<?= $data['user_data']['email'] ?>">
