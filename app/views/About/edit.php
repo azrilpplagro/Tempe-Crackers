@@ -32,130 +32,13 @@
           <td>Nama Lengkap</td>
           <td><input type="text" name="nama_lengkap" class="form-control" placeholder="nama_lengkap" value="<?= $data['user_data']['nama_lengkap'] ?>"></td>
         </tr>
-        
-
-        <!-- Alamat -->
         <tr>
           <td>Alamat</td>
           <td>
             <input class="form-control" type="text" name="alamat" value="<?= $data['user_data']['alamat'] ?>">
           </td>
         </tr>
-        <tr>
-          <td>Desa</td>
-            <td>
-            <span style="display: flex;">
-              <select class="form-select" id="desa" name="desa" aria-label="Default select example">
-                <?php
-                  $data_desa = $this->model("User_model")->get_data_desa();
-                  foreach ($data_desa as $desa) { 
-                    if($desa['id'] == $data['user_data']['desa_id']){ ?>
-                      <option value="<?= $desa['id'] ?>"  selected><?= $desa['nama_desa'] ?></option>
-                    <?php
-                    }
-                    else{ ?>
-                      <option value="<?= $desa['id'] ?>"><?= $desa['nama_desa'] ?></option>
-                    <?php
-                    }
-                  }
-                ?>
-              </select>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td>Kecamatan</td>
-            <td>
-            <span style="display: flex;">
-              <select class="form-select" id="kecamatan" name="kecamatan" aria-label="Default select example">
-                <?php
-                  $data_kecamatan = $this->model("User_model")->get_data_kecamatan();
-                  foreach ($data_kecamatan as $kecamatan) { 
-                    if($kecamatan['id'] == $data['user_data']['kecamatan_id']){ ?>
-                      <option value="<?= $kecamatan['id'] ?>"  selected><?= $kecamatan['nama_kecamatan'] ?></option>
-                    <?php
-                    }
-                    else{ ?>
-                      <option value="<?= $kecamatan['id'] ?>"><?= $kecamatan['nama_kecamatan'] ?></option>
-                    <?php
-                    }
-                  }
-                ?>
-              </select>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td>Kabupaten</td>
-            <td>
-            <span style="display: flex;">
-              <select class="form-select" id="kabupaten" name="kabupaten" aria-label="Default select example">
-                <?php
-                  $kabupaten = $this->model("User_model")->get_data_kabupaten();
-                  foreach ($kabupaten as $kabupaten) { 
-                    if($kabupaten['id'] == $data['user_data']['kabupaten_id']){ ?>
-                      <option value="<?= $kabupaten['id'] ?>"  selected><?= $kabupaten['nama_kabupaten'] ?></option>
-                    <?php
-                    }
-                    else{ ?>
-                      <option value="<?= $kabupaten['id'] ?>"><?= $kabupaten['nama_kabupaten'] ?></option>
-                    <?php
-                    }
-                  }
-                ?>
-              </select>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td>Provinsi</td>
-            <td>
-            <span style="display: flex;">
-              <select class="form-select" id="provinsi" name="provinsi" aria-label="Default select example">
-                <?php
-                  $provinsi = $this->model("User_model")->get_data_provinsi();
-                  foreach ($provinsi as $provinsi) { 
-                    if($provinsi['id'] == $data['user_data']['provinsi_id']){ ?>
-                      <option value="<?= $provinsi['id'] ?>"  selected><?= $provinsi['nama_provinsi'] ?></option>
-                    <?php
-                    }
-                    else{ ?>
-                      <option value="<?= $provinsi['id'] ?>"><?= $provinsi['nama_provinsi'] ?></option>
-                    <?php
-                    }
-                  }
-                ?>
-              </select>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td>Negara</td>
-            <td>
-            <span style="display: flex;">
-              <select class="form-select" id="negara" name="negara" aria-label="Default select example">
-                <?php
-                  $negara = $this->model("User_model")->get_data_negara();
-                  foreach ($negara as $negara) { 
-                    if($negara['id'] == $data['user_data']['negara_id']){ ?>
-                      <option value="<?= $negara['id'] ?>"  selected><?= $negara['nama_negara'] ?></option>
-                    <?php
-                    }
-                    else{ ?>
-                      <option value="<?= $negara['id'] ?>"><?= $negara['nama_negara'] ?></option>
-                    <?php
-                    }
-                  }
-                ?>
-              </select>
-            </span>
-          </td>
-        </tr>
 
-
-
-        <!-- akhir alamat -->
-        
         <tr>
           <td>Tanggal Lahir</td>
           <td>
@@ -185,6 +68,7 @@
           </td>
         </tr>
       </table>
+    <button type="submit" name="edit_tempat" value="edit_tempat" class="btn btn-outline-dark" style="width: 300px;">Ubah Tempat</button>
     <button type="submit" name="edit" value="edit" class="btn btn-dark" style="width: 300px;">Simpan</button>
   </form>
 </div>

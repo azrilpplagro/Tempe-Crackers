@@ -132,22 +132,208 @@ class About extends Controller{
         }
       }
     }
+
+
+    if(isset($_POST['edit_tempat'])){
+      $this->view("Component/input_negara",$_POST);
+    }
+    // input_negara
+    if(isset($_POST['input_negara'])){
+      $data_provinsi = ($this->model("User_model")->get_provinsi_by_negara($_POST['negara']));
       
+      if(count($data_provinsi) == 0){
+        $data_send = [
+          "negara" => $_POST['negara'],
+          "provinsi" => 0,
+          "kabupaten" => 0,
+          "kecamatan" => 0,
+          "desa" => 0
+        ];
+        $data_email = $_SESSION['login']['email'];
+        $data_update_tempat = $data_send;
+        $result = $this->model("User_model")->update_tempat($data_email,$data_update_tempat) ;
+        if(is_bool($result) ){
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => true,
+            "title" => "Success",
+            "message" => "Ubah tempat Berhasil",
+            "url" => BASE_URL.'/About'
+          ]);
+        }
+        else{
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => false,
+            "title" => "Peringatan",
+            "message" => "Gagagl Update Tempat",
+            "url" => BASE_URL.'/About'
+          ]);
+        }
+      }
+      else{
+        $data_send = [
+          "negara" => $_POST['negara'],
+          "data_provinsi" => $data_provinsi,
+        ];
+        $this->view("Component/input_provinsi",$data_send);
+      }
+      
+    }
+    if(isset($_POST['input_provinsi'])){
+      $data_kabupaten = ($this->model("User_model")->get_kabupaten_by_provinsi($_POST['provinsi']));
+
+      if(count($data_kabupaten) == 0){
+        $data_send = [
+          "negara" => $_POST['negara'],
+          "provinsi" => $_POST['provinsi'],
+          "kabupaten" => 0,
+          "kecamatan" => 0,
+          "desa" => 0
+        ];
+        $data_email = $_SESSION['login']['email'];
+        $data_update_tempat = $data_send;
+        $result = $this->model("User_model")->update_tempat($data_email,$data_update_tempat) ;
+        if(is_bool($result) ){
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => true,
+            "title" => "Success",
+            "message" => "Ubah tempat Berhasil",
+            "url" => BASE_URL.'/About'
+          ]);
+        }
+        else{
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => false,
+            "title" => "Peringatan",
+            "message" => "Gagagl Update Tempat",
+            "url" => BASE_URL.'/About'
+          ]);
+        }
+      }
+      else{
+        $data_send = [
+          "negara" => $_POST['negara'],
+          "provinsi" => $_POST['provinsi'],
+          "data_kabupaten" => $data_kabupaten
+        ];
+        $this->view("Component/input_kabupaten",$data_send);
+      }
+      
+    }
+    if(isset($_POST['input_kabupaten'])){
+      $data_kecamatan = ($this->model("User_model")->get_kecamatan_by_kabupaten($_POST['kabupaten']));
+
+      if(count($data_kecamatan) == 0){
+        $data_send = [
+          "negara" => $_POST['negara'],
+          "provinsi" => $_POST['provinsi'],
+          "kabupaten" => $_POST['kabupaten'],
+          "kecamatan" => 0,
+          "desa" => 0
+        ];
+        $data_email = $_SESSION['login']['email'];
+        $data_update_tempat = $data_send;
+        $result = $this->model("User_model")->update_tempat($data_email,$data_update_tempat) ;
+        if(is_bool($result) ){
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => true,
+            "title" => "Success",
+            "message" => "Ubah tempat Berhasil",
+            "url" => BASE_URL.'/About'
+          ]);
+        }
+        else{
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => false,
+            "title" => "Peringatan",
+            "message" => "Gagagl Update Tempat",
+            "url" => BASE_URL.'/About'
+          ]);
+        }
+      }
+      else{
+        $data_send = [
+          "negara" => $_POST['negara'],
+          "provinsi" => $_POST['provinsi'],
+          "kabupaten" => $_POST['kabupaten'],
+          "data_kecamatan" => $data_kecamatan
+        ];
+        $this->view("Component/input_kecamatan",$data_send);
+      }
+     
+    }
+
+    if(isset($_POST['input_kecamatan'])){
+      $data_desa = ($this->model("User_model")->get_desa_by_kecamatan($_POST['kecamatan']));
+
+      if(count($data_desa) == 0){
+        $data_send = [
+          "negara" => $_POST['negara'],
+          "provinsi" => $_POST['provinsi'],
+          "kabupaten" => $_POST['kabupaten'],
+          "kecamatan" => $_POST['kecamatan'],
+          "desa" => 0
+        ];
+        $data_email = $_SESSION['login']['email'];
+        $data_update_tempat = $data_send;
+        $result = $this->model("User_model")->update_tempat($data_email,$data_update_tempat) ;
+        if(is_bool($result) ){
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => true,
+            "title" => "Success",
+            "message" => "Ubah tempat Berhasil",
+            "url" => BASE_URL.'/About'
+          ]);
+        }
+        else{
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => false,
+            "title" => "Peringatan",
+            "message" => "Gagagl Update Tempat",
+            "url" => BASE_URL.'/About'
+          ]);
+        }
+      }
+      else{
+        $data_send = [
+          "negara" => $_POST['negara'],
+          "provinsi" => $_POST['provinsi'],
+          "kabupaten" => $_POST['kabupaten'],
+          "kecamatan" => $_POST['kecamatan'],
+          "data_desa" => $data_desa
+        ];
+        $this->view("Component/input_desa",$data_send);
+      }
+      
+    }
+
+    if(isset($_POST['input_desa'])){
+      $data_email = $_SESSION['login']['email'];
+      $data_update_tempat = $_POST;
+      $result = $this->model("User_model")->update_tempat($data_email,$data_update_tempat) ;
+      if(is_bool($result) ){
+        $this->view("Component/modal_redirect",$data_alert = [
+          "type" => true,
+          "title" => "Success",
+          "message" => "Ubah tempat Berhasil",
+          "url" => BASE_URL.'/About'
+        ]);
+      }
+      else{
+        $this->view("Component/modal_redirect",$data_alert = [
+          "type" => false,
+          "title" => "Peringatan",
+          "message" => "Gagagl Update Tempat",
+          "url" => BASE_URL.'/About'
+        ]);
+      }
+    }
+
+
     
     $this->view("header",$data['controller_name']);
     $this->view("$controller_name/$method_name",$data);
     $this->view("footer");
   }
-
-
-
-
-
-
-
-
-
-
 
 
   function uploadImg(){

@@ -20,9 +20,6 @@ class Register extends Controller{
           ]);
           $this->view("header",$data['controller_name']);
           $this->view("$data[controller_name]/index",$data);
-          $this->view("footer");
-
-          
           die();
         }
       }

@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<?= BASE_URL ?>/style/css/Login.css">
 <style>
   .card-container{
-    width: 70%;
+    width: 40%;
   }
   @media screen and (max-width:576px) {
     .card-container{
@@ -70,87 +70,7 @@
       <td></td>
     </tr>
   
-    <table class="table">
-        <tr>
-          <td>
-            <label label label for="jenis_kelamin"><h5>Desa</h5></label>
-            <span style="display: flex;">
-              <select class="form-select" id="desa" name="desa" aria-label="Default select example">
-                <?php
-                  $data_desa = $this->model("User_model")->get_data_desa();
-                  foreach ($data_desa as $desa) { ?>
-                    <option value="<?= $desa['id'] ?>"><?= $desa['nama_desa'] ?></option>
-                  <?php
-                  }
-                ?>
-              </select>
-            </span>
-          </td>
-          <td>
-            <label for="jenis_kelamin"><h5>Kecamatan</h5></label>
-            <span style="display: flex;">
-              <select class="form-select" id="kecamatan" name="kecamatan" aria-label="Default select example">
-                <?php
-                  $kecamatan = $this->model("User_model")->get_data_kecamatan();
-                  foreach ($kecamatan as $kecamatan) { ?>
-                    <option value="<?= $kecamatan['id'] ?>"><?= $kecamatan['nama_kecamatan'] ?></option>
-                  <?php
-                  }
-                ?>
-              </select>
-            </span>
-          </td>
-        </tr>
-        
-        <tr>
-          <td>
-              <label for="jenis_kelamin"><h5>Kabupaten</h5></label>
-              <span style="display: flex;">
-                <select class="form-select" id="kabupaten" name="kabupaten" aria-label="Default select example">
-                  <?php
-                    $data_kabupaten = $this->model("User_model")->get_data_kabupaten();
-                    foreach ($data_kabupaten as $kabupaten) { ?>
-                      <option value="<?= $kabupaten['id'] ?>"><?= $kabupaten['nama_kabupaten'] ?></option>
-                    <?php
-                    }
-                  ?>
-                </select>
-              </span>
-          </td>
-          <td>
-              <label for="jenis_kelamin"><h5>Provinsi</h5></label>
-              <span style="display: flex;">
-                <select class="form-select" id="provinsi" name="provinsi" aria-label="Default select example">
-                  <?php
-                    $data_provinsi = $this->model("User_model")->get_data_provinsi();
-                    foreach ($data_provinsi as $provinsi) { ?>
-                      <option value="<?= $provinsi['id'] ?>"><?= $provinsi['nama_provinsi'] ?></option>
-                    <?php
-                    }
-                  ?>
-                </select>
-              </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-              <label for="jenis_kelamin"><h5>Negara</h5></label>
-              <span style="display: flex;">
-                <select class="form-select" id="negara" name="negara" aria-label="Default select example">
-                  <?php
-                    $data_negara = $this->model("User_model")->get_data_negara();
-                    foreach ($data_negara as $negara) { ?>
-                      <option value="<?= $negara['id'] ?>"><?= $negara['nama_negara'] ?></option>
-                    <?php
-                    }
-                  ?>
-                </select>
-              </span>
-          </td>
-          <td></td>
-        </tr>
-    </table>
+    
 
     <div style="width: 100%;">
       <span style="display: flex;align-items: flex-end;">
