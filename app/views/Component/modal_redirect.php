@@ -17,7 +17,7 @@
           <?= $data['message'] ?>
 
           <br><br>
-          <a href="<?= $data['url'] ?>" class="btn btn-dark">Kembali</a>
+          <a href="<?= $data['url'] ?>" class="btn btn-dark">Back</a>
           </center>
           
         </div>

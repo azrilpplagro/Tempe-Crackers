@@ -12,7 +12,7 @@
           <td><?= $data['user_data']['email'] ?></td>
         </tr>
         <tr>
-          <td>No Telepon</td>
+          <td>Phone Number</td>
           <td><?= $data['user_data']['no_telepon'] ?></td>
         </tr>
         <tr>
@@ -20,11 +20,11 @@
           <td><?= $data['user_data']['username'] ?></td>
         </tr>
         <tr>
-          <td>Nama Lengkap</td>
+          <td>Full Name</td>
           <td><?= $data['user_data']['nama_lengkap'] ?></td>
         </tr>
         <tr>
-          <td>Alamat</td>
+          <td>Address</td>
           <td><?= $data['user_data']['alamat'] ?>, <?= 
             $this->model("User_model")->get_spesifik_alamat(
               $data['user_data']['desa_id'],$data['user_data']['kecamatan_id'], $data['user_data']['kabupaten_id'],$data['user_data']['provinsi_id'],$data['user_data']['negara_id']); 
@@ -32,20 +32,20 @@
         </tr>
         
         <tr>
-          <td>Tanggal Lahir</td>
+          <td>Date of Birth</td>
           <td><?= $data['user_data']['tanggal_lahir'] ?></td>
           
         </tr>
         <tr>
-          <td>Jenis Kelamin</td>
+          <td>Gender</td>
           <td><?php 
-                if($data['user_data']['jenis_kelamin_id'] == 1){echo 'Pria';}else{echo 'Wanita';}  
+                if($data['user_data']['jenis_kelamin_id'] == 1){echo 'Male';}else{echo 'Female';}  
               ?>
           </td>
         </tr>
         <tr>
-          <td>Status Akun</td>
-          <td><?php if($data['user_data']['status_akun_id'] == 1){echo "Aktif";}else{echo "Tidak Aktif";}   ?></td>
+          <td>Account Status</td>
+          <td><?php if($data['user_data']['status_akun_id'] == 1){echo "Active";}else{echo "Not Active";}   ?></td>
         </tr>
       </table>
     <a href="<?= BASE_URL ?>/About/edit/" class="btn btn-dark" style="width: 300px;">Edit</a>

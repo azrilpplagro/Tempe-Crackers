@@ -18,8 +18,8 @@ class Login extends Controller{
       else{
         $this->view("Component/modal_redirect",$data_alert = [
           "type" => false,
-          "title" => "Peringatan",
-          "message" => "username atau password yang anda masukan salah",
+          "title" => "Warning",
+          "message" => "The username or password you entered is wrong",
           "url" => BASE_URL.'/Login'
         ]);
       }

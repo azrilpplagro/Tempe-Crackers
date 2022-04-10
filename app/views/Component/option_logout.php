@@ -4,13 +4,13 @@
       <div class="modal-content" >
         <div class="modal-header">
 
-        <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin keluar dari <?= $_SESSION['login']['email'] ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure leave  <?= $_SESSION['login']['email'] ?></h5>
         </div>
 
         <form action="" method="POST">
           <div  class="modal-footer" style="display: flex;">
-              <button name="cancel_logout" value="cancel_logout" type="submit" class="btn btn-outline-dark">Kembali</button>
-              <button name="logout" value="logout" type="submit" class="btn btn-dark">Keluar</button>
+              <button name="cancel_logout" value="cancel_logout" type="submit" class="btn btn-outline-dark">Back</button>
+              <button name="logout" value="logout" type="submit" class="btn btn-dark">Logout</button>
           </div>
         </form>
       </div>

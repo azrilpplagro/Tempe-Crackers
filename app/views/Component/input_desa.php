@@ -4,7 +4,7 @@
       <div class="modal-content" >
         <div class="modal-header">
 
-          <h5 class="modal-title" id="exampleModalLabel">Desa</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Village</h5>
           <form action="" method="POST">
             <button class="btn-close"aria-label="Close"></button>
           </form>

@@ -16,7 +16,7 @@ class Register extends Controller{
         if($value == ""){
           $this->view("Component/modal",$data_alert = [
             "title" => "Warning",
-            "message" => "Data Harus Terisi Semua!",
+            "message" => "All Data Must Be Filled In!",
           ]);
           $this->view("header",$data['controller_name']);
           $this->view("$data[controller_name]/index",$data);
@@ -27,8 +27,8 @@ class Register extends Controller{
       foreach ( str_split($_POST['no_telepon']) as $char) {
         if(!is_numeric($char)){
           $this->view("Component/modal",$data_alert = [
-            "title" => "Peringatan",
-            "message" => "Nomor telepon harus angka!",
+            "title" => "Warning",
+            "message" => "The phone number must be a number!",
           ]);
           $is_validate_phone_number = false;
           break;
@@ -37,8 +37,8 @@ class Register extends Controller{
       if($is_validate_phone_number == true){
         if(strlen($_POST['no_telepon']) < 11 || strlen($_POST['no_telepon']) > 12 ){
           $this->view("Component/modal",$data_alert = [
-            "title" => "Peringatan",
-            "message" => "panjang nomor telepon harus 11-12",
+            "title" => "Warning",
+            "message" => "The length of the phone number must be 11-12",
           ]);
           $is_validate_phone_number = false;
         }
@@ -62,14 +62,14 @@ class Register extends Controller{
           
           $this->view("Component/modal",$data_alert = [
             "title" => "Warning",
-            "message" => "$key yang anda masukan sudah dipakai",
+            "message" => "$key you entered is already in use",
           ]);
         }
         else{
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => true,
             "title" => "Registrasi Success",
-            "message" => "pendaftaran berhasil, silahkan login untuk masuk ke website",
+            "message" => "Registration is successful, please login to enter the website",
             "url" => BASE_URL.'/Login'
           ]);
         }

@@ -22,14 +22,14 @@
         <td>
           <span style="display: flex;align-items: flex-end;">
             <img style="width: 30px;" src="<?= BASE_URL ?>/icon/akun.png" alt="">
-            <h5>Nama Lengkap</h5>
+            <h5>Full Name</h5>
           </span>
           <input type="text" placeholder="Nama Lengkap" name="nama_lengkap" class="form-control">
         </td>
         <td>
             <span style="display: flex;align-items: flex-end;">
               <img style="width: 30px;" src="<?= BASE_URL ?>/icon/date-picker.png" alt="">
-              <h5>Tanggal Lahir</h5>
+              <h5>Date of birth</h5>
             </span>
           <input type="date" name="tanggal_lahir" class="form-control">
         </td>
@@ -38,7 +38,7 @@
         <td>
           <span style="display: flex;align-items: flex-end;">
             <img style="width: 30px;" src="<?= BASE_URL ?>/icon/gender.png" alt="">
-            <h5>Jenis Kelamin</h5>
+            <h5>Gender</h5>
           </span>
         </td>
       </tr>
@@ -46,11 +46,11 @@
           <td>
             <span style="display: flex;">
               <div class="form-check">
-                <input type="radio" class="form-check-input" id="radio1" name="jenis_kelamin" value="1" checked>Laki-laki
+                <input type="radio" class="form-check-input" id="radio1" name="jenis_kelamin" value="1" checked>Male
                 <label class="form-check-label" for="radio1"></label>
               </div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" id="radio2" name="jenis_kelamin" value="2">Perempuan
+                <input type="radio" class="form-check-input" id="radio2" name="jenis_kelamin" value="2">Female
                 <label class="form-check-label" for="radio2"></label>
               </div>
             </span>
@@ -63,7 +63,7 @@
       <td>
         <span style="display: flex;align-items: flex-end;">
           <img style="width: 30px;" src="<?= BASE_URL ?>/icon/home.png" alt="">
-          <h5>Alamat</h5>
+          <h5>Address</h5>
         </span>
         <input type="text" placeholder="Alamat" name="alamat" class="form-control">
       </td>
@@ -75,7 +75,7 @@
     <div style="width: 100%;">
       <span style="display: flex;align-items: flex-end;">
         <img style="width: 20px;" src="<?= BASE_URL ?>/icon/phone.png" alt="">
-        <h5>No Telepon</h5>
+        <h5>phone number</h5>
       </span>
       <input type="text" placeholder="no telepon" name="no_telepon" class="form-control">
 

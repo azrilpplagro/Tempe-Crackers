@@ -50,8 +50,8 @@ class About extends Controller{
             if(!is_numeric($char)){
               $this->view("Component/modal_redirect",$data_alert = [
                 "type" => false,
-                "title" => "Peringatan",
-                "message" => "Nomor telepon harus angka!",
+                "title" => "Warning",
+                "message" => "The phone number must be a number!",
                 "url" => BASE_URL.'/About/edit'
               ]);
               $is_validate_phone_number = false;
@@ -62,8 +62,8 @@ class About extends Controller{
             if(strlen($_POST['no_telepon']) < 11 || strlen($_POST['no_telepon']) > 12 ){
               $this->view("Component/modal_redirect",$data_alert = [
                 "type" => false,
-                "title" => "Peringatan",
-                "message" => "panjang nomor telepon harus 11-12",
+                "title" => "Warning",
+                "message" => "The length of the phone number must be 11-12",
                 "url" => BASE_URL.'/About/edit'
               ]);
               $is_validate_phone_number = false;
@@ -76,7 +76,7 @@ class About extends Controller{
               $this->view("Component/modal_redirect",$data_alert = [
                 "type" => true,
                 "title" => "Success",
-                "message" => "Edit data berhasil",
+                "message" => "Data saved successfully",
                 "url" => BASE_URL.'/About'
               ]);
             }
@@ -93,7 +93,7 @@ class About extends Controller{
               $this->view("Component/modal_redirect",$data_alert = [
                 "type" => false,
                 "title" => "Warning",
-                "message" => "$key yang anda masukan sudah dipakai",
+                "message" => "$key you entered is already in use",
                 "url" => BASE_URL.'/About/edit'
               ]);
             }
@@ -102,8 +102,8 @@ class About extends Controller{
         else{
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => false,
-            "title" => "Peringatan",
-            "message" => "Data input tidak boleh ada yang kosong",
+            "title" => "Warning",
+            "message" => "The input data cannot be empty",
             "url" => BASE_URL.'/About/edit'
           ]);
         }
@@ -111,8 +111,8 @@ class About extends Controller{
       else{
         $this->view("Component/modal_redirect",$data_alert = [
           "type" => false,
-          "title" => "Peringatan",
-          "message" => "Password Salah",
+          "title" => "Warning",
+          "message" => "Password wrong",
           "url" => BASE_URL.'/About/edit'
         ]);
       }
@@ -156,15 +156,15 @@ class About extends Controller{
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => true,
             "title" => "Success",
-            "message" => "Ubah tempat Berhasil",
+            "message" => "Data saved successfully",
             "url" => BASE_URL.'/About'
           ]);
         }
         else{
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => false,
-            "title" => "Peringatan",
-            "message" => "Gagagl Update Tempat",
+            "title" => "Warning",
+            "message" => "Failed to update data",
             "url" => BASE_URL.'/About'
           ]);
         }
@@ -196,15 +196,15 @@ class About extends Controller{
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => true,
             "title" => "Success",
-            "message" => "Ubah tempat Berhasil",
+            "message" => "Data saved successfully",
             "url" => BASE_URL.'/About'
           ]);
         }
         else{
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => false,
-            "title" => "Peringatan",
-            "message" => "Gagagl Update Tempat",
+            "title" => "Warning",
+            "message" => "Failed to update data",
             "url" => BASE_URL.'/About'
           ]);
         }
@@ -237,15 +237,15 @@ class About extends Controller{
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => true,
             "title" => "Success",
-            "message" => "Ubah tempat Berhasil",
+            "message" => "Data saved successfully",
             "url" => BASE_URL.'/About'
           ]);
         }
         else{
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => false,
-            "title" => "Peringatan",
-            "message" => "Gagagl Update Tempat",
+            "title" => "Warning",
+            "message" => "Failed to update data",
             "url" => BASE_URL.'/About'
           ]);
         }
@@ -280,15 +280,15 @@ class About extends Controller{
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => true,
             "title" => "Success",
-            "message" => "Ubah tempat Berhasil",
+            "message" => "Data saved successfully",
             "url" => BASE_URL.'/About'
           ]);
         }
         else{
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => false,
-            "title" => "Peringatan",
-            "message" => "Gagagl Update Tempat",
+            "title" => "Warning",
+            "message" => "Failed to update data",
             "url" => BASE_URL.'/About'
           ]);
         }
@@ -314,15 +314,15 @@ class About extends Controller{
         $this->view("Component/modal_redirect",$data_alert = [
           "type" => true,
           "title" => "Success",
-          "message" => "Ubah tempat Berhasil",
+          "message" => "Data saved successfully",
           "url" => BASE_URL.'/About'
         ]);
       }
       else{
         $this->view("Component/modal_redirect",$data_alert = [
           "type" => false,
-          "title" => "Peringatan",
-          "message" => "Gagagl Update Tempat",
+          "title" => "Warning",
+          "message" => "Failed to update data",
           "url" => BASE_URL.'/About'
         ]);
       }
@@ -367,7 +367,7 @@ class About extends Controller{
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => true,
             "title" => "Success",
-            "message" => "Upload Avatar Berhasil",
+            "message" => "Avatar Upload Successful",
             "url" => BASE_URL.'/About'
           ]);
         }
@@ -375,7 +375,7 @@ class About extends Controller{
           $this->view("Component/modal_redirect",$data_alert = [
             "type" => false,
             "title" => "warning",
-            "message" => "format file harus jpg/png",
+            "message" => "File format must be jpg/png",
             "url" => BASE_URL.'/About/edit'
           ]);
         }
@@ -384,7 +384,7 @@ class About extends Controller{
         $this->view("Component/modal_redirect",$data_alert = [
           "type" => false,
           "title" => "warning",
-          "message" => "ukuran file terlalu besar",
+          "message" => "File size is too big",
           "url" => BASE_URL.'/About/edit'
         ]);
       }
@@ -393,7 +393,7 @@ class About extends Controller{
       $this->view("Component/modal_redirect",$data_alert = [
         "type" => false,
         "title" => "warning",
-        "message" => "ukuran file terlalu besar",
+        "message" => "File size is too big",
         "url" => BASE_URL.'/About/edit'
       ]);
     }
