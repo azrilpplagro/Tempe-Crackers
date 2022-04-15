@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 10, 2022 at 10:06 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 15 Apr 2022 pada 03.24
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -45,7 +45,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`nama_lengkap`, `alamat`, `desa_id`, `kecamatan_id`, `kabupaten_id`, `provinsi_id`, `negara_id`, `tanggal_lahir`, `jenis_kelamin_id`, `email`, `no_telepon`, `username`, `password`, `profil`) VALUES
@@ -54,7 +54,7 @@ INSERT INTO `admin` (`nama_lengkap`, `alamat`, `desa_id`, `kecamatan_id`, `kabup
 -- --------------------------------------------------------
 
 --
--- Table structure for table `akun_mitra`
+-- Struktur dari tabel `akun_mitra`
 --
 
 CREATE TABLE `akun_mitra` (
@@ -76,16 +76,42 @@ CREATE TABLE `akun_mitra` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `akun_mitra`
+-- Dumping data untuk tabel `akun_mitra`
 --
 
 INSERT INTO `akun_mitra` (`email`, `no_telepon`, `username`, `nama_lengkap`, `alamat`, `desa_id`, `kecamatan_id`, `kabupaten_id`, `provinsi_id`, `negara_id`, `tanggal_lahir`, `jenis_kelamin_id`, `password`, `status_akun_id`, `profil`) VALUES
-('ferdifmwn65@gmail.com', '085124356490', 'ferdifmwn', 'Ferdi Frimawan', 'Jl. Pahlawan No. 31', 6, 11, 18, 1, 1, '1980-11-03', 1, 'ferfmawan90', 2, '');
+('ferdifmwn65@gmail.com', '085124356490', 'ferdifmwn', 'Ferdi Frimawan', 'Jl. Pahlawan No. 31', 6, 11, 18, 1, 1, '1980-11-03', 1, 'ferfmawan90', 1, '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `desa`
+-- Struktur dari tabel `artikel`
+--
+
+CREATE TABLE `artikel` (
+  `id` int(11) NOT NULL,
+  `tanggal_terbit` date NOT NULL,
+  `admin_email` varchar(255) NOT NULL,
+  `judul` varchar(500) NOT NULL,
+  `isi` text NOT NULL,
+  `gambar` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `artikel`
+--
+
+INSERT INTO `artikel` (`id`, `tanggal_terbit`, `admin_email`, `judul`, `isi`, `gambar`) VALUES
+(7, '2022-04-12', 'abdiwahab@gmail.com', 'History of Tempe Crackers \"Matahari\" UD. Restu Jaya', '\"Matahari\" tempe cracker entrepreneur UD. Restu Jaya has been running for about 49 years. The business, which was established in Puger Kulon Village, Puger District, Jember Regency, East Java, Indonesia since 1973, is a family business that has been passed down from generation to generation.\r\nThe business that is currently being developed by Mr. Abdi Wahab started from an owner who has the expertise to make crackers, so from his expertise and with a strong determination to be an entrepreneur he tried to establish a cracker factory named \"Matahari\" tempe crackers.\r\nAs time goes by, the product of \"Matahari\" tempe crackers is getting more and more known. This increases the amount of demand which also affects the amount of production. So the owner\'s business needs to be expanded by adding production sites, adding production equipment, and adding employees.\r\n', '1.jpeg'),
+(8, '2022-04-12', 'abdiwahab@gmail.com', 'High Quality \"Sun\" Tempe Crackers', 'The quality of \"Matahari\" Tempe Crackers is unquestionable. Tempe Sun crackers are traditional foods like other crackers which are made from tempeh. Unlike the types of crackers in general, which are mostly made from wheat flour. \"Matahari\" tempe crackers are made from soybean tempeh, so they have a very distinctive taste. Although it is made from tempeh, there are quite a lot of fans of Matahari crackers in the community. it\'s savory, delicious, addictive. There is no doubt why these \"Matahari\" tempe crackers are known in the community.', '8.jpeg'),
+(9, '2022-04-12', 'abdiwahab@gmail.com', 'Development of Tempe Crackers Matahari', 'Until now, Matahari Tempe Crackers have been able to develop into quite a large business. One of the supporters of this opinion is a customer of the \"Matahari\" tempe cracker business from UD. Restu Jaya has spread throughout Indonesia.\r\n\r\nIn addition, UD. Restu Jaya always prioritizes the quality of the tempeh crackers it produces, so many customers don\'t hesitate to order in large quantities. And not only that, now \"Matahari\" Tempe Crackers already have several production factories so that they can produce tempe crackers in large quantities.\r\n\r\nNow, UD. Restu Jaya has a target to achieve, namely Matahari Tempe Crackers products can enter the international arena. So that not only Indonesian people can taste these tempe crackers, foreign countries can also feel how delicious domestically made tempe crackers are.\r\n', '9.jpg'),
+(10, '2022-04-15', 'abdiwahab@gmail.com', 'Get To Know What Is Tempe Crackers', 'Tempe in its history is a native plant of Indonesia, several ancient manuscripts from the land of Java mention the existence of this type of food. It is very proud that this food is indeed a genuine heritage from our own ancestors and from generation to generation until now it is still a culinary tradition of the nation itself and even started to be known by other nations.\r\n\r\nIn the development of soybean processing into tempeh, so far the development is very rapid in the country, judging from the very large demand for Indonesian soybeans, it may be ironic to support regions and lands that have the potential to be able to produce soybeans themselves, but in fact we are very dependent on the supply of soybeans from America.\r\n\r\nTempe crackers are a type of processed food made from thinly fried soy tempeh and mixed with spices and other ingredients, this food is mostly produced on the island of Java.\r\n', '10.jpeg'),
+(11, '2022-04-15', 'abdiwahab@gmail.com', 'How to Process Tempeh Crackers', 'Processing tempeh Crackers is very easy. This is because when we receive the Crackers in raw condition we only need to fry them on a hot fire and a lot of oil. For the time it takes to fry it is also quite short, only about 1 minute. In addition, tempeh Crackers are very durable if stored properly at room temperature, which is around 25°C and can last up to 1 year.', '11.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `desa`
 --
 
 CREATE TABLE `desa` (
@@ -95,7 +121,7 @@ CREATE TABLE `desa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `desa`
+-- Dumping data untuk tabel `desa`
 --
 
 INSERT INTO `desa` (`id`, `id_kecamatan`, `nama_desa`) VALUES
@@ -115,7 +141,7 @@ INSERT INTO `desa` (`id`, `id_kecamatan`, `nama_desa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenis_kelamin`
+-- Struktur dari tabel `jenis_kelamin`
 --
 
 CREATE TABLE `jenis_kelamin` (
@@ -124,7 +150,7 @@ CREATE TABLE `jenis_kelamin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jenis_kelamin`
+-- Dumping data untuk tabel `jenis_kelamin`
 --
 
 INSERT INTO `jenis_kelamin` (`id`, `jenis_kelamin`) VALUES
@@ -134,7 +160,7 @@ INSERT INTO `jenis_kelamin` (`id`, `jenis_kelamin`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kabupaten`
+-- Struktur dari tabel `kabupaten`
 --
 
 CREATE TABLE `kabupaten` (
@@ -144,7 +170,7 @@ CREATE TABLE `kabupaten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kabupaten`
+-- Dumping data untuk tabel `kabupaten`
 --
 
 INSERT INTO `kabupaten` (`id`, `id_provinsi`, `nama_kabupaten`) VALUES
@@ -177,7 +203,7 @@ INSERT INTO `kabupaten` (`id`, `id_provinsi`, `nama_kabupaten`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kecamatan`
+-- Struktur dari tabel `kecamatan`
 --
 
 CREATE TABLE `kecamatan` (
@@ -187,7 +213,7 @@ CREATE TABLE `kecamatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kecamatan`
+-- Dumping data untuk tabel `kecamatan`
 --
 
 INSERT INTO `kecamatan` (`id`, `id_kabupaten`, `nama_kecamatan`) VALUES
@@ -209,7 +235,7 @@ INSERT INTO `kecamatan` (`id`, `id_kabupaten`, `nama_kecamatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `negara`
+-- Struktur dari tabel `negara`
 --
 
 CREATE TABLE `negara` (
@@ -218,7 +244,7 @@ CREATE TABLE `negara` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `negara`
+-- Dumping data untuk tabel `negara`
 --
 
 INSERT INTO `negara` (`id`, `nama_negara`) VALUES
@@ -235,7 +261,7 @@ INSERT INTO `negara` (`id`, `nama_negara`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `provinsi`
+-- Struktur dari tabel `provinsi`
 --
 
 CREATE TABLE `provinsi` (
@@ -245,7 +271,7 @@ CREATE TABLE `provinsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `provinsi`
+-- Dumping data untuk tabel `provinsi`
 --
 
 INSERT INTO `provinsi` (`id`, `id_negara`, `nama_provinsi`) VALUES
@@ -266,7 +292,7 @@ INSERT INTO `provinsi` (`id`, `id_negara`, `nama_provinsi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `status_akun`
+-- Struktur dari tabel `status_akun`
 --
 
 CREATE TABLE `status_akun` (
@@ -275,7 +301,7 @@ CREATE TABLE `status_akun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `status_akun`
+-- Dumping data untuk tabel `status_akun`
 --
 
 INSERT INTO `status_akun` (`id`, `status_akun`) VALUES
@@ -287,95 +313,107 @@ INSERT INTO `status_akun` (`id`, `status_akun`) VALUES
 --
 
 --
--- Indexes for table `akun_mitra`
+-- Indeks untuk tabel `akun_mitra`
 --
 ALTER TABLE `akun_mitra`
   ADD PRIMARY KEY (`email`);
 
 --
--- Indexes for table `desa`
+-- Indeks untuk tabel `artikel`
+--
+ALTER TABLE `artikel`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `desa`
 --
 ALTER TABLE `desa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jenis_kelamin`
+-- Indeks untuk tabel `jenis_kelamin`
 --
 ALTER TABLE `jenis_kelamin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kabupaten`
+-- Indeks untuk tabel `kabupaten`
 --
 ALTER TABLE `kabupaten`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kecamatan`
+-- Indeks untuk tabel `kecamatan`
 --
 ALTER TABLE `kecamatan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `negara`
+-- Indeks untuk tabel `negara`
 --
 ALTER TABLE `negara`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `provinsi`
+-- Indeks untuk tabel `provinsi`
 --
 ALTER TABLE `provinsi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `status_akun`
+-- Indeks untuk tabel `status_akun`
 --
 ALTER TABLE `status_akun`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `desa`
+-- AUTO_INCREMENT untuk tabel `artikel`
+--
+ALTER TABLE `artikel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT untuk tabel `desa`
 --
 ALTER TABLE `desa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `jenis_kelamin`
+-- AUTO_INCREMENT untuk tabel `jenis_kelamin`
 --
 ALTER TABLE `jenis_kelamin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `kabupaten`
+-- AUTO_INCREMENT untuk tabel `kabupaten`
 --
 ALTER TABLE `kabupaten`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `kecamatan`
+-- AUTO_INCREMENT untuk tabel `kecamatan`
 --
 ALTER TABLE `kecamatan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `negara`
+-- AUTO_INCREMENT untuk tabel `negara`
 --
 ALTER TABLE `negara`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `provinsi`
+-- AUTO_INCREMENT untuk tabel `provinsi`
 --
 ALTER TABLE `provinsi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `status_akun`
+-- AUTO_INCREMENT untuk tabel `status_akun`
 --
 ALTER TABLE `status_akun`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
