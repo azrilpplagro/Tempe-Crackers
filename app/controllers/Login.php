@@ -13,7 +13,7 @@ class Login extends Controller{
 
       if($is_alredy_account != false){
         $_SESSION['login'] = ["email"=>$is_alredy_account['email'], "password"=> $is_alredy_account['password']  ];
-        header("Location: ".BASE_URL."/Home");
+        header("Location: ".BASE_URL."/Article");
       }
       else{
         $this->view("Component/modal_redirect",$data_alert = [

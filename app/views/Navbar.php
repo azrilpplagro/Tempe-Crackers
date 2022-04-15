@@ -3,7 +3,7 @@ $photo = $this->model("User_model")->get_data_user($_SESSION['login']['email'])[
 ?>
 
 <section class="mb-3">
-  <nav class="navbar navbar-light">
+  <nav class="navbar fixed-top navbar-light">
     <div class="container-fluid">
       <a href="<?= BASE_URL ?>/About" style=";text-decoration:none;color:black;cursor:pointer;display:flex;justify-content:center;align-items: center;">
         <div style="display:flex;flex-direction:column;justify-content:space-between;margin-right:10px">
@@ -31,10 +31,10 @@ $photo = $this->model("User_model")->get_data_user($_SESSION['login']['email'])[
 
 <div class="side-bar">
   <div class="logo">
-    <img src="<?= BASE_URL ?>/icon/logo.png" alt="" style="width: 80px;margin:auto">
-    <img src="<?= BASE_URL ?>/icon/brand.png" alt="" style="width: 80px;margin:auto">
+    <img src="<?= BASE_URL ?>/icon/logo.png" alt="">
   </div>
-  <a href="<?= BASE_URL ?>/Home">
+  
+  <a href="<?= BASE_URL ?>/Article">
     <img src="<?= BASE_URL ?>/icon/Dashboard.png" alt="">
     <h4>Dashboard</h4>
   </a>
@@ -61,8 +61,10 @@ $photo = $this->model("User_model")->get_data_user($_SESSION['login']['email'])[
       ?>
     </a>
     <!-- <img style="cursor:pointer" src="<?= BASE_URL ?>/icon/dropdown.png" alt=""> -->
+    
+
     <form action="" method="POST">
-      <button type="submit" name="tombol_logout" class="btn"><img src="<?= BASE_URL ?>/icon/logout.png" style="width: 30px;margin-left:20px" alt=""></button>
+      <button type="submit" name="tombol_logout" class="btn"><img src="<?= BASE_URL ?>/icon/logout.png" style="width: 30px;margin-left:20px;padding-left:0px" alt=""></button>
     </form>
     
   </div>

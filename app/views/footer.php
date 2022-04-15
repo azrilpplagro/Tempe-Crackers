@@ -1,6 +1,7 @@
 
 
 <script src="<?= BASE_URL ?>/style/bootstrap.min.js"></script>
+<script src="<?= BASE_URL ?>/style/js/index.js"></script>
 <script>
     const formComment = document.getElementById("formComment");
     function showFormComment(){

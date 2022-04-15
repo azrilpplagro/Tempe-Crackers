@@ -1,12 +1,12 @@
 <?php
-$_SESSION['controller_name'] = "Home";
+$_SESSION['controller_name'] = "Article";
 $_SESSION['method_name'] = "index";
 $_SESSION['params'] = [];
 
 
 class App{
 
-  protected $controller = "Home";
+  protected $controller = "Article";
   protected $method = "index";
   protected $params = [];
 
@@ -19,7 +19,7 @@ class App{
       unset($url[0]);
     }
     else{
-      header("Location: ".BASE_URL."/Home");
+      header("Location: ".BASE_URL."/Article");
     }
 
     // controller

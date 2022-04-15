@@ -22,25 +22,25 @@
         </tr>
         <tr>
           <td>Phone Number</td>
-          <td><input type="text" name="no_telepon" class="form-control" placeholder="no_telepon" value="<?= $data['user_data']['no_telepon'] ?>" ></td>
+          <td><input type="text" oninput="null_title_value('no_telepon')" name="no_telepon" class="form-control" placeholder="no_telepon" value="<?= $data['user_data']['no_telepon'] ?>" ></td>
         </tr>
         <tr>
           <td>Username</td>
-          <td><input type="text" name="username" class="form-control" placeholder="username" value="<?= $data['user_data']['username'] ?>" ></td>
+          <td><input type="text" oninput="null_title_value('username')" name="username" class="form-control" placeholder="username" value="<?= $data['user_data']['username'] ?>" ></td>
         </tr>
         <tr>
           <td>Full Name</td>
-          <td><input type="text" name="nama_lengkap" class="form-control" placeholder="nama_lengkap" value="<?= $data['user_data']['nama_lengkap'] ?>"></td>
+          <td><input type="text" oninput="null_title_value('nama_lengkap')" name="nama_lengkap" class="form-control" placeholder="nama_lengkap" value="<?= $data['user_data']['nama_lengkap'] ?>"></td>
         </tr>
         <tr>
           <td>Address</td>
           <td>
-            <input class="form-control" type="text" name="alamat" value="<?= $data['user_data']['alamat'] ?>">
+            <input class="form-control" type="text" oninput="null_title_value('alamat')" name="alamat" value="<?= $data['user_data']['alamat'] ?>">
           </td>
         </tr>
 
         <tr>
-          <td>Date ofBSirth</td>
+          <td>Date of Birth</td>
           <td>
           <input type="date" placeholder="tgl_lahir" value="<?= $data['user_data']['tanggal_lahir'] ?>" name="tanggal_lahir" class="form-control"></td>
         </tr>

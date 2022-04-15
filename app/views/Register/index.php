@@ -1,7 +1,20 @@
 <link rel="stylesheet" href="<?= BASE_URL ?>/style/css/Login.css">
 <style>
   .card-container{
-    width: 40%;
+    width: 600px;
+  }
+  span{
+    display: flex;
+    align-items: flex-end;
+  }
+  span img{
+    width: 25px;
+    align-self: flex-start;
+  }
+  span h5{
+    align-self: flex-end;
+    margin: 0;
+    padding: 0;
   }
   @media screen and (max-width:576px) {
     .card-container{
@@ -20,15 +33,15 @@
     <table class="table">
       <tr>
         <td>
-          <span style="display: flex;align-items: flex-end;">
-            <img style="width: 30px;" src="<?= BASE_URL ?>/icon/akun.png" alt="">
+          <span>
+            <img src="<?= BASE_URL ?>/icon/akun.png" alt="">
             <h5>Full Name</h5>
           </span>
-          <input type="text" placeholder="Nama Lengkap" name="nama_lengkap" class="form-control">
+          <input type="text" oninput="null_title_value('nama_lengkap')" placeholder="Nama Lengkap" name="nama_lengkap" class="form-control">
         </td>
         <td>
-            <span style="display: flex;align-items: flex-end;">
-              <img style="width: 30px;" src="<?= BASE_URL ?>/icon/date-picker.png" alt="">
+            <span>
+              <img src="<?= BASE_URL ?>/icon/date-picker.png" alt="">
               <h5>Date of birth</h5>
             </span>
           <input type="date" name="tanggal_lahir" class="form-control">
@@ -36,8 +49,8 @@
       </tr>
       <tr>
         <td>
-          <span style="display: flex;align-items: flex-end;">
-            <img style="width: 30px;" src="<?= BASE_URL ?>/icon/gender.png" alt="">
+          <span>
+            <img src="<?= BASE_URL ?>/icon/gender.png" alt="">
             <h5>Gender</h5>
           </span>
         </td>
@@ -61,11 +74,11 @@
   
     <tr>
       <td>
-        <span style="display: flex;align-items: flex-end;">
-          <img style="width: 30px;" src="<?= BASE_URL ?>/icon/home.png" alt="">
+        <span>
+          <img src="<?= BASE_URL ?>/icon/home.png" alt="">
           <h5>Address</h5>
         </span>
-        <input type="text" placeholder="Alamat" name="alamat" class="form-control">
+        <input type="text" oninput="null_title_value('alamat')" placeholder="Alamat" name="alamat" class="form-control">
       </td>
       <td></td>
     </tr>
@@ -73,31 +86,31 @@
     
 
     <div style="width: 100%;">
-      <span style="display: flex;align-items: flex-end;">
-        <img style="width: 20px;" src="<?= BASE_URL ?>/icon/phone.png" alt="">
+      <span>
+        <img src="<?= BASE_URL ?>/icon/phone.png" alt="">
         <h5>phone number</h5>
       </span>
-      <input type="text" placeholder="no telepon" name="no_telepon" class="form-control">
+      <input type="text" oninput="null_title_value('no_telepon')" placeholder="no telepon" name="no_telepon" class="form-control">
 
   
-      <span style="display: flex;align-items: flex-end;">
-        <img style="width: 20px;" src="<?= BASE_URL ?>/icon/email.png" alt="">
+      <span>
+        <img src="<?= BASE_URL ?>/icon/email.png" alt="">
         <h5>Email</h5>
       </span>
-      <input type="email" placeholder="email" name="email" class="form-control">
+      <input type="email" oninput="null_title_value('email')" placeholder="email" name="email" class="form-control">
 
 
-      <span style="display: flex;align-items: flex-end;">
-        <img style="width: 20px;" src="<?= BASE_URL ?>/icon/username.png" alt="">
+      <span>
+        <img src="<?= BASE_URL ?>/icon/username.png" alt="">
         <h5>Username</h5>
       </span>
-      <input type="text" placeholder="username" name="username" class="form-control">
+      <input type="text" oninput="null_title_value('username')" placeholder="username" name="username" class="form-control">
 
-      <span style="display: flex;align-items: flex-end;">
-        <img style="width: 20px;" src="<?= BASE_URL ?>/icon/password.png" alt="">
+      <span>
+        <img src="<?= BASE_URL ?>/icon/password.png" alt="">
         <h5>password</h5>
       </span>
-      <input type="password" placeholder="password" name="password" class="form-control">
+      <input type="password" oninput="null_title_value('password')" placeholder="password" name="password" class="form-control">
 
     </div>
     <br><br>

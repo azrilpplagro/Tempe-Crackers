@@ -1,3 +1,14 @@
+.shadow-textarea textarea.form-control::placeholder {
+  font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
+}
+.null-value{
+  border-color: #E74C3C;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
 table tr td{
   font-size: 18px;
 }
@@ -25,6 +36,7 @@ section {
   align-items: center;
   justify-content: space-between;
   background-color: #F7CCAC;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 #nav img{
   width: 40px;
@@ -59,9 +71,10 @@ section {
   display: flex;
   justify-content: center;
 }
-/* .side-bar img{
-  margin: auto;
-} */
+
+.side-bar .logo img{
+  width: 50%;margin:auto
+}
 
 .side-bar a{
   font-size: 20px;
@@ -72,13 +85,18 @@ section {
   display: flex;
   padding-left: 20px;
   align-items: center;
-  
+  padding-bottom: 0;
 }
 
 .side-bar a img{
   width: 30px;
 }
-.side-bar :hover{
+.side-bar a h4{
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+}
+.side-bar a:hover{
   background-color: rgba(128, 128, 128, 0.185);
 }
 
@@ -88,6 +106,7 @@ section {
   
   padding-top: 50px;
   background-color: white;
+  padding-left: 20px;padding-top:60px;padding-right:20px;padding-bottom: 20px;
 }
 
 .main .main-account{
@@ -112,7 +131,7 @@ section {
   .main{
     margin-left: 0px;
     width: 100% ;
-    padding-top: 0;
+    padding-top: 70px;
     /* background-color: aqua; */
   }
   section{
@@ -137,7 +156,9 @@ section {
     display: flex; justify-content:space-between;
     padding-right: 40px;
     padding-left: 40px;
-    
+  }
+  .fixed-top{
+    z-index: 10;
   }
 }
 
