@@ -55,7 +55,7 @@ $photo = $this->model("User_model")->get_data_user($_SESSION['login']['email'])[
         <img style="border-radius: 50%;width:40px;height:40px;object-fit: cover;" src="<?= BASE_URL ?>/icon/akun.png" alt="">
       <?php  
       }else{ ?>
-        <img style="border-radius: 50%;width:40px;height:40px;object-fit: cover;" src="<?= BASE_URL ?>/img/<?= $photo ?>" alt="">
+        <img style="border-radius: 50%;width:40px;height:40px;object-fit: cover;" src="<?= BASE_URL ?>/img/<?= $photo ?>?<?php echo time(); ?>" alt="">
       <?php
       }
       ?>

@@ -11,10 +11,12 @@
         </div>
         <div class="modal-body" style="border-radius: 30px;">
           <form action="" method="POST" enctype="multipart/form-data">
-              <input  type="file" name="img_upload" style="font-size: 16px;">
+              <div class="file-input">
+                <label class="btn btn-primary" for="upload-photo">Upload Image...</label>
+                <input name="img_upload" type="file" required>
+              </div>
               <br><br>
               <center><button style="font-size: 14px;" type="submit" name="upload" class="btn btn-success container">Upload</button></center>
-              
           </form>
         </div>
       </div>
