@@ -14,9 +14,11 @@ class Register extends Controller{
     if(isset($_POST['register'])){
       foreach ($_POST as $value) {
         if($value == ""){
-          $this->view("Component/modal",$data_alert = [
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => false,
             "title" => "Warning",
             "message" => "All Data Must Be Filled In!",
+            "url" => ''
           ]);
           $this->view("header",$data['controller_name']);
           $this->view("$data[controller_name]/index",$data);
@@ -26,9 +28,11 @@ class Register extends Controller{
       $is_validate_phone_number = true;
       foreach ( str_split($_POST['no_telepon']) as $char) {
         if(!is_numeric($char)){
-          $this->view("Component/modal",$data_alert = [
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => false,
             "title" => "Warning",
             "message" => "The phone number must be a number!",
+            "url" => ''
           ]);
           $is_validate_phone_number = false;
           break;
@@ -36,9 +40,11 @@ class Register extends Controller{
       }
       if($is_validate_phone_number == true){
         if(strlen($_POST['no_telepon']) < 11 || strlen($_POST['no_telepon']) > 12 ){
-          $this->view("Component/modal",$data_alert = [
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => false,
             "title" => "Warning",
             "message" => "The length of the phone number must be 11-12",
+            "url" => ''
           ]);
           $is_validate_phone_number = false;
         }
@@ -59,10 +65,11 @@ class Register extends Controller{
             $key .= ",no telepon";
           }
           $key = substr_replace($key, '', 0, 1);
-          
-          $this->view("Component/modal",$data_alert = [
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => false,
             "title" => "Warning",
             "message" => "$key you entered is already in use",
+            "url" => ''
           ]);
         }
         else{

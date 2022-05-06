@@ -6,7 +6,8 @@ class Article extends Controller{
     $data = [
       "controller_name"=>$controller_name,
       "method_name"=> $method_name,
-      "articles" => $this->model("Article_model")->get_all_article()
+      "articles" => $this->model("Article_model")->get_all_article(),
+      "products" => $this->model("Product_model")->get_all_product()
     ];
       
     

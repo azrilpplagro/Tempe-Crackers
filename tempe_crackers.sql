@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Apr 2022 pada 03.24
+-- Waktu pembuatan: 06 Bulan Mei 2022 pada 15.56
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.28
 
@@ -41,15 +41,16 @@ CREATE TABLE `admin` (
   `no_telepon` varchar(13) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(500) NOT NULL,
-  `profil` varchar(1000) NOT NULL
+  `profil` varchar(1000) NOT NULL,
+  `no_rekening` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `admin`
 --
 
-INSERT INTO `admin` (`nama_lengkap`, `alamat`, `desa_id`, `kecamatan_id`, `kabupaten_id`, `provinsi_id`, `negara_id`, `tanggal_lahir`, `jenis_kelamin_id`, `email`, `no_telepon`, `username`, `password`, `profil`) VALUES
-('Abdi Wahab', 'dsn kerajan 2', 1, 1, 1, 1, 1, '1985-05-21', 1, 'abdiwahab@gmail.com', '0812337737716', 'abdiwahab', 'abdiwahab345_', 'Abdiwahab@gmail.com.jpg');
+INSERT INTO `admin` (`nama_lengkap`, `alamat`, `desa_id`, `kecamatan_id`, `kabupaten_id`, `provinsi_id`, `negara_id`, `tanggal_lahir`, `jenis_kelamin_id`, `email`, `no_telepon`, `username`, `password`, `profil`, `no_rekening`) VALUES
+('Abdi Wahab', 'dsn kerajan 2', 1, 1, 1, 1, 1, '1985-05-21', 1, 'abdiwahab@gmail.com', '0812337737716', 'abdiwahab', 'abdiwahab345_', 'Abdiwahab@gmail.com.jpg', 'BCA : 23123124324');
 
 -- --------------------------------------------------------
 
@@ -102,11 +103,11 @@ CREATE TABLE `artikel` (
 --
 
 INSERT INTO `artikel` (`id`, `tanggal_terbit`, `admin_email`, `judul`, `isi`, `gambar`) VALUES
-(7, '2022-04-12', 'abdiwahab@gmail.com', 'History of Tempe Crackers \"Matahari\" UD. Restu Jaya', '\"Matahari\" tempe cracker entrepreneur UD. Restu Jaya has been running for about 49 years. The business, which was established in Puger Kulon Village, Puger District, Jember Regency, East Java, Indonesia since 1973, is a family business that has been passed down from generation to generation.\r\nThe business that is currently being developed by Mr. Abdi Wahab started from an owner who has the expertise to make crackers, so from his expertise and with a strong determination to be an entrepreneur he tried to establish a cracker factory named \"Matahari\" tempe crackers.\r\nAs time goes by, the product of \"Matahari\" tempe crackers is getting more and more known. This increases the amount of demand which also affects the amount of production. So the owner\'s business needs to be expanded by adding production sites, adding production equipment, and adding employees.\r\n', '1.jpeg'),
-(8, '2022-04-12', 'abdiwahab@gmail.com', 'High Quality \"Sun\" Tempe Crackers', 'The quality of \"Matahari\" Tempe Crackers is unquestionable. Tempe Sun crackers are traditional foods like other crackers which are made from tempeh. Unlike the types of crackers in general, which are mostly made from wheat flour. \"Matahari\" tempe crackers are made from soybean tempeh, so they have a very distinctive taste. Although it is made from tempeh, there are quite a lot of fans of Matahari crackers in the community. it\'s savory, delicious, addictive. There is no doubt why these \"Matahari\" tempe crackers are known in the community.', '8.jpeg'),
-(9, '2022-04-12', 'abdiwahab@gmail.com', 'Development of Tempe Crackers Matahari', 'Until now, Matahari Tempe Crackers have been able to develop into quite a large business. One of the supporters of this opinion is a customer of the \"Matahari\" tempe cracker business from UD. Restu Jaya has spread throughout Indonesia.\r\n\r\nIn addition, UD. Restu Jaya always prioritizes the quality of the tempeh crackers it produces, so many customers don\'t hesitate to order in large quantities. And not only that, now \"Matahari\" Tempe Crackers already have several production factories so that they can produce tempe crackers in large quantities.\r\n\r\nNow, UD. Restu Jaya has a target to achieve, namely Matahari Tempe Crackers products can enter the international arena. So that not only Indonesian people can taste these tempe crackers, foreign countries can also feel how delicious domestically made tempe crackers are.\r\n', '9.jpg'),
-(10, '2022-04-15', 'abdiwahab@gmail.com', 'Get To Know What Is Tempe Crackers', 'Tempe in its history is a native plant of Indonesia, several ancient manuscripts from the land of Java mention the existence of this type of food. It is very proud that this food is indeed a genuine heritage from our own ancestors and from generation to generation until now it is still a culinary tradition of the nation itself and even started to be known by other nations.\r\n\r\nIn the development of soybean processing into tempeh, so far the development is very rapid in the country, judging from the very large demand for Indonesian soybeans, it may be ironic to support regions and lands that have the potential to be able to produce soybeans themselves, but in fact we are very dependent on the supply of soybeans from America.\r\n\r\nTempe crackers are a type of processed food made from thinly fried soy tempeh and mixed with spices and other ingredients, this food is mostly produced on the island of Java.\r\n', '10.jpeg'),
-(11, '2022-04-15', 'abdiwahab@gmail.com', 'How to Process Tempeh Crackers', 'Processing tempeh Crackers is very easy. This is because when we receive the Crackers in raw condition we only need to fry them on a hot fire and a lot of oil. For the time it takes to fry it is also quite short, only about 1 minute. In addition, tempeh Crackers are very durable if stored properly at room temperature, which is around 25°C and can last up to 1 year.', '11.jpg');
+(7, '2022-04-12', 'abdiwahab@gmail.com', 'History of Tempe Crackers ', '\"Matahari\" tempe cracker entrepreneur UD. Restu Jaya has been running for about 49 years. The business, which was established in Puger Kulon Village, Puger District, Jember Regency, East Java, Indonesia since 1973, is a family business that has been passed down from generation to generation.\r\nThe business that is currently being developed by Mr. Abdi Wahab started from an owner who has the expertise to make crackers, so from his expertise and with a strong determination to be an entrepreneur he tried to establish a cracker factory named \"Matahari\" tempe crackers.\r\nAs time goes by, the product of \"Matahari\" tempe crackers is getting more and more known. This increases the amount of demand which also affects the amount of production. So the owner\'s business needs to be expanded by adding production sites, adding production equipment, and adding employees.', '1.jpg'),
+(8, '2022-04-12', 'abdiwahab@gmail.com', 'High Quality ', 'The quality of \"Matahari\" Tempe Crackers is unquestionable. Tempe Sun crackers are traditional foods like other crackers which are made from tempeh. Unlike the types of crackers in general, which are mostly made from wheat flour. \"Matahari\" tempe crackers are made from soybean tempeh, so they have a very distinctive taste. Although it is made from tempeh, there are quite a lot of fans of Matahari crackers in the community. it\'s savory, delicious, addictive. There is no doubt why these \"Matahari\" tempe crackers are known in the community.', '8.jpg'),
+(10, '2022-05-06', 'abdiwahab@gmail.com', 'Get To Know What is Tempe Crackers', 'Tempe in its history is a native plant of Indonesia, several ancient manuscripts from the land of Java mention the existence of this type of food. It is very proud that this food is indeed a genuine heritage from our own ancestors and from generation to generation until now it is still a culinary tradition of the nation itself and even started to be known by other nations.\r\n\r\nIn the development of soybean processing into tempeh, so far the development is very rapid in the country, judging from the very large demand for Indonesian soybeans, it may be ironic to support regions and lands that have the potential to be able to produce soybeans themselves, but in fact we are very dependent on the supply of soybeans from America.\r\n\r\nTempe crackers are a type of processed food made from thinly fried soy tempeh and mixed with spices and other ingredients, this food is mostly produced on the island of Java.', '10.jpeg'),
+(11, '2022-05-06', 'abdiwahab@gmail.com', 'How to Process Tempeh Crackers', 'Processing tempeh Crackers is very easy. This is because when we receive the Crackers in raw condition we only need to fry them on a hot fire and a lot of oil. For the time it takes to fry it is also quite short, only about 1 minute. In addition, tempeh Crackers are very durable if stored properly at room temperature, which is around 25°C and can last up to 1 year.', '11.jpg'),
+(12, '2022-05-06', 'abdiwahab@gmail.com', 'Development of Tempe Crackers Matahari', 'Until now, Matahari Tempe Crackers have been able to develop into quite a large business. One of the supporters of this opinion is a customer of the \"Matahari\" tempe cracker business from UD. Restu Jaya has spread throughout Indonesia.\r\n\r\nIn addition, UD. Restu Jaya always prioritizes the quality of the tempeh crackers it produces, so many customers don\'t hesitate to order in large quantities. And not only that, now \"Matahari\" Tempe Crackers already have several production factories so that they can produce tempe crackers in large quantities.\r\n\r\nNow, UD. Restu Jaya has a target to achieve, namely Matahari Tempe Crackers products can enter the international arena. So that not only Indonesian people can taste these tempe crackers, foreign countries can also feel how delicious domestically made tempe crackers are.', '12.jpeg');
 
 -- --------------------------------------------------------
 
@@ -261,6 +262,66 @@ INSERT INTO `negara` (`id`, `nama_negara`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `pesanan`
+--
+
+CREATE TABLE `pesanan` (
+  `id` int(11) NOT NULL,
+  `mitra_email` varchar(255) NOT NULL,
+  `produk_id` int(11) NOT NULL,
+  `jumlah_pesanan` int(11) NOT NULL,
+  `metode_pembayaran` varchar(255) NOT NULL,
+  `bukti_pembayaran` varchar(500) DEFAULT NULL,
+  `status_pembayaran` varchar(255) NOT NULL,
+  `tanggal_pesan` date DEFAULT NULL,
+  `batas_pembayaran` date DEFAULT NULL,
+  `tanggal_pembayaran` date DEFAULT NULL,
+  `jenis_pengiriman` varchar(255) NOT NULL,
+  `no_resi` varchar(255) DEFAULT NULL,
+  `tanggal_pengiriman` date DEFAULT NULL,
+  `status_pengiriman` varchar(255) NOT NULL,
+  `tanggal_terima` date DEFAULT NULL,
+  `status_diterima` varchar(255) NOT NULL,
+  `total_pembayaran` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `pesanan`
+--
+
+INSERT INTO `pesanan` (`id`, `mitra_email`, `produk_id`, `jumlah_pesanan`, `metode_pembayaran`, `bukti_pembayaran`, `status_pembayaran`, `tanggal_pesan`, `batas_pembayaran`, `tanggal_pembayaran`, `jenis_pengiriman`, `no_resi`, `tanggal_pengiriman`, `status_pengiriman`, `tanggal_terima`, `status_diterima`, `total_pembayaran`) VALUES
+(36, 'ferdifmwn65@gmail.com', 1, 2, 'cod', '', 'Belum Lunas', '2022-05-06', '2022-05-07', NULL, 'expedition', '1234321234', '2022-05-06', 'Sudah Dikirim', '2022-04-06', 'Diterima', 40000),
+(37, 'ferdifmwn65@gmail.com', 1, 3, 'transfer', '37.jpg', 'Lunas', '2022-05-06', '2022-05-07', '2022-05-06', 'pickup', NULL, NULL, 'Sudah Dikirim', '2022-05-06', 'Diterima', 36000),
+(38, 'ferdifmwn65@gmail.com', 1, 5, 'transfer', '38.png', 'Lunas', '2022-05-06', '2022-05-07', '2022-05-06', 'expedition', '12354213214', '2022-05-06', 'Sudah Dikirim', '2022-05-06', 'Diterima', 435000);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `produk`
+--
+
+CREATE TABLE `produk` (
+  `id` int(11) NOT NULL,
+  `nama_produk` varchar(255) NOT NULL,
+  `stok` int(11) NOT NULL,
+  `berat` int(11) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `gambar` varchar(500) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `expired` date NOT NULL,
+  `stok_bulan` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `produk`
+--
+
+INSERT INTO `produk` (`id`, `nama_produk`, `stok`, `berat`, `deskripsi`, `gambar`, `harga`, `expired`, `stok_bulan`) VALUES
+(1, 'Kerupuk Tempe', 47, 5, '   Produk ini dibuat dengan bahan baku yang berkualitas dan diproduksi dengan high quality\r\n\r\nBerat: 5kg\r\n\r\nStock: 500\r\n\r\nExpired: 11 November 2023\r\n\r\nHarga: Rp.47.000,00\r\n     ', '1.png', 47000, '2022-04-20', 'March');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `provinsi`
 --
 
@@ -355,6 +416,18 @@ ALTER TABLE `negara`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `pesanan`
+--
+ALTER TABLE `pesanan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `produk`
+--
+ALTER TABLE `produk`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `provinsi`
 --
 ALTER TABLE `provinsi`
@@ -374,7 +447,7 @@ ALTER TABLE `status_akun`
 -- AUTO_INCREMENT untuk tabel `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `desa`
@@ -405,6 +478,18 @@ ALTER TABLE `kecamatan`
 --
 ALTER TABLE `negara`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT untuk tabel `pesanan`
+--
+ALTER TABLE `pesanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT untuk tabel `produk`
+--
+ALTER TABLE `produk`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `provinsi`

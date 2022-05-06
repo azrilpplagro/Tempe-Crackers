@@ -5,6 +5,30 @@
 
 
 <div class="main">
+
+  <h1>Product</h1>
+    <br>
+    <div class="card-container">
+      <?php
+      foreach ($data['products'] as $product) { ?>
+        <div  class="card-product">
+          <a href="<?= BASE_URL ?>/Product/detail_product/<?= $product['id'] ?>">
+            <div class="img-product" style="background-image: url('http://localhost/Tempe-Crackers/public/img/products/<?= $product['gambar'] ?>?<?php echo time(); ?>');">
+          </div>
+          </a>
+         
+          <h4><?= $product['nama_produk'] ?></h4>
+          <h6>Stock : <?= $product['stok'] ?> / <?= $product['stok_bulan'] ?></h6>
+          <h6>Price : Rp.<?= $product['harga'] ?></h6>
+          <a href="<?= BASE_URL ?>/Product/create_order/<?= $product['id'] ?>" class="btn btn-success container" style="font-size: 12px;">Buy</a>
+        </div>
+      <?php
+      }
+      ?>
+    </div>
+                
+  <div>
+
   <h1>Article</h1>
   <br>
 

@@ -15,10 +15,20 @@ class Controller{
       }
     }
 
-    else if (isset($_SESSION['login']) && ($_SESSION['controller_name'] == "Login" || $_SESSION['controller_name'] == "Register" || $_SESSION['controller_name'] == "First_Pagr") ){
+    else if (
+      isset($_SESSION['login']) && 
+      ($_SESSION['controller_name'] == "Login" || 
+      $_SESSION['controller_name'] == "Register" || 
+      $_SESSION['controller_name'] == "First_Page") ){
+        
       header("Location: ".BASE_URL."/Article"); 
     }
-    else if(isset($_SESSION['login'])  && ($_SESSION['controller_name'] != "Login" || $_SESSION['controller_name'] != "Register" || $_SESSION['controller_name'] != "First_Page" )){
+    else if(
+      isset($_SESSION['login'])  && 
+      ($_SESSION['controller_name'] != "Login" || 
+      $_SESSION['controller_name'] != "Register" || 
+      $_SESSION['controller_name'] != "First_Page" )){
+
       $is_alredy_account = $this->model("User_model")->login($_SESSION['login']['email'],$_SESSION['login']['password']);
       if($is_alredy_account == false){
         session_destroy();

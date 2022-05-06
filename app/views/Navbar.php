@@ -38,6 +38,10 @@ $photo = $this->model("User_model")->get_data_user($_SESSION['login']['email'])[
     <img src="<?= BASE_URL ?>/icon/Dashboard.png" alt="">
     <h4>Dashboard</h4>
   </a>
+  <a href="<?= BASE_URL ?>/Order">
+    <img src="<?= BASE_URL ?>/icon/keranjang.png" alt="">
+    <h4>My Order</h4>
+  </a>
   <br>
   
 </div>

@@ -18,6 +18,11 @@ class User_model{
       return "Error";
     }
   }
+  public function get_data_admin(){
+    $query = "SELECT * FROM admin";
+    $this->db->query($query);
+    return $this->db->single();
+  }
   
   public function update_data($data){
     $query = "SELECT * FROM $this->table WHERE (username = :username  || no_telepon = :no_telepon) && email != :email ";
@@ -99,6 +104,7 @@ class User_model{
       return $this->db->single();
     }
   }
+
 
   public function get_spesifik_alamat($id_desa,$id_kecamatan,$id_kabupaten,$id_provinsi,$id_negara){
     // Desa

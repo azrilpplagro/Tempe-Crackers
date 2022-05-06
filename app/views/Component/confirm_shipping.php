@@ -4,13 +4,14 @@
       <div class="modal-content" >
         <div class="modal-header">
 
-        <p class="modal-title" id="exampleModalLabel">Are you sure leave  <?= $_SESSION['login']['email'] ?></p>
+          <p class="modal-title" id="exampleModalLabel">Are you sure the product has been received?</p>
         </div>
 
         <form action="" method="POST">
           <div  class="modal-footer" style="display: flex;">
-              <button name="cancel_logout" value="cancel_logout" type="submit" class="btn btn-outline-dark">Back</button>
-              <button name="logout" value="logout" type="submit" class="btn btn-dark">Logout</button>
+              <input type="hidden" name="id" value="<?= $data['id'] ?>">
+              <button name="cancel" value="cancel" type="submit" class="btn btn-outline-dark">Cancel</button>
+              <button name="confirm_shipping" value="confirm" type="submit" class="btn btn-dark">Confirm</button>
           </div>
         </form>
       </div>
