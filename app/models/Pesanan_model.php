@@ -95,7 +95,7 @@ class Pesanan_model{
   public function confirm_shipping($id){
     $tanggal_terima = date("Y-m-d");
     $this->db->query(
-      "UPDATE $this->table set status_pengiriman = 'Sudah Dikirim', status_diterima = 'Diterima', tanggal_terima = :tanggal_terima WHERE id=:id AND mitra_email = :mitra_email"
+      "UPDATE $this->table set status_pengiriman = 'Sudah Dikirim',status_pembayaran = 'Lunas', status_diterima = 'Diterima', tanggal_terima = :tanggal_terima WHERE id=:id AND mitra_email = :mitra_email"
     );
     $this->db->bind('id',$id);
     $this->db->bind('mitra_email',$_SESSION['login']['email']);
@@ -110,6 +110,8 @@ class Pesanan_model{
     $this->db->bind('email',$_SESSION['login']['email']);
     return $this->db->result_set();
   }
+
+
   public function detail_pesanan_selesai($data){
     $this->db->query(
       "SELECT * FROM $this->table WHERE id = :id and mitra_email = :mitra_email"
@@ -143,7 +145,7 @@ class Pesanan_model{
 
   public function delete_expired_payment(){
     $this->db->query(
-      "DELETE FROM $this->table WHERE  batas_pembayaran < CURRENT_DATE() AND bukti_pembayaran = ''"
+      "UPDATE $this->table set status_diterima = 'Dibatalkan' WHERE  batas_pembayaran < CURRENT_DATE() AND bukti_pembayaran = ''"
     );
     $this->db->execute();
   }

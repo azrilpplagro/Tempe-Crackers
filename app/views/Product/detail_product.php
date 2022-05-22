@@ -13,6 +13,10 @@ $data_product = $data['detail_product'];
 <?php $this->view("Navbar",[]); ?>
 
 <div class="main">
+  <a href="../../">
+    <img src="<?= BASE_URL ?>/icon/remove.png" style="width: 30px;position:fixed;right:20px" alt="">
+  </a>  
+
   <center><h2><?= $data_product['nama_produk'] ?></h2></center><br>
   <center>
     <div class="product-img"></div>

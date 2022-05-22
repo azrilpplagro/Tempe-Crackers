@@ -1,4 +1,5 @@
 <?php
+
 $data_user = $this->model("User_model")->get_data_user($data['detail_order']['mitra_email']);
 $detail_product = $this->model("Product_model")->get_spesific_product($data['detail_order']['produk_id']);
 $data_admin = $this->model("User_model")->get_data_admin();
@@ -61,6 +62,12 @@ $data_admin = $this->model("User_model")->get_data_admin();
     <h5 style="color: red;">IDR <?= $data['detail_order']['total_pembayaran'] ?>,00</h5>
   </span>
   <br><hr>
+  <?php if($data['detail_order']['status_diterima'] == "Dibatalkan"){ ?>
+    <h5>Cancellation Detail</h5>
+    <p style="color: red;">Cancellation details canceled automatically by the system for not making a payment within 1 x 24 hours</p>
+    <hr>
+  <?php }
+   ?>
 
   <table class="table">
     <tr>

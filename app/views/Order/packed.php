@@ -40,12 +40,6 @@
         if($order['metode_pembayaran'] != 'cod'){ ?>
           <div style="display: flex;">
             <a href="<?= BASE_URL ?>/Order/payment_validation/<?= $order['id'] ?>" style="width: 250px;font-size:15px" class="btn btn-success">Payment Status</a>
-            <?php
-            if( $order['status_pembayaran'] == "Lunas" && $order['jenis_pengiriman'] == 'pickup' ) { ?>
-              <form action="" method="POST">
-                <button type="submit" name="tombol_confirm" value="<?= $order['id'] ?>" style="margin-left:10px;width: 250px;font-size:15px" class="btn btn-dark">Order Confirmation</button>
-              </form>
-            <?php } ?>
           </div>
           
         <?php

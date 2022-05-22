@@ -12,7 +12,6 @@ $photo = $this->model("User_model")->get_data_user($_SESSION['login']['email'])[
         </div>
         <img style="width: 40px;" src="<?= BASE_URL ?>/icon/akun.png" alt="">
       </a>
-      
       <div style="display: flex; justify-content:center">
         <div class="navbar-toggler first-button"  data-mdb-toggle="collapse"
           data-mdb-target="#navbarToggleExternalContent9"
@@ -24,7 +23,6 @@ $photo = $this->model("User_model")->get_data_user($_SESSION['login']['email'])[
           <button type="submit" name="tombol_logout" class="btn"><img src="<?= BASE_URL ?>/icon/logout.png" style="width: 30px;margin-left:20px" alt=""></button>
         </form>
       </div>
-      
     </div>
   </nav>
 </section>
@@ -34,13 +32,17 @@ $photo = $this->model("User_model")->get_data_user($_SESSION['login']['email'])[
     <img src="<?= BASE_URL ?>/icon/logo.png" alt="">
   </div>
   
-  <a href="<?= BASE_URL ?>/Article">
+  <a href="<?= BASE_URL ?>/Article" <?php if($_SESSION['controller_name'] == "Article" ) echo 'style="background-color: rgba(128, 128, 128, 0.315);' ?>">
     <img src="<?= BASE_URL ?>/icon/Dashboard.png" alt="">
     <h4>Dashboard</h4>
   </a>
-  <a href="<?= BASE_URL ?>/Order">
+  <a href="<?= BASE_URL ?>/Order" <?php if($_SESSION['controller_name'] == "Order" &&  !isset($_SESSION['params'][1])) echo 'style="background-color: rgba(128, 128, 128, 0.315);' ?>">
     <img src="<?= BASE_URL ?>/icon/keranjang.png" alt="">
     <h4>My Order</h4>
+  </a>
+  <a href="<?= BASE_URL ?>/History" <?php if($_SESSION['controller_name'] == "History" || ( $_SESSION['controller_name'] == "Order" &&  isset($_SESSION['params'][1])  ) ) echo 'style="background-color: rgba(128, 128, 128, 0.315);' ?>">
+    <img src="<?= BASE_URL ?>/icon/history.png" alt="">
+    <h4>Order History</h4>
   </a>
   <br>
   

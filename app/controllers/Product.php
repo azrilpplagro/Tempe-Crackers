@@ -39,43 +39,54 @@ class Product extends Controller{
           "type" => false,
           "title" => "Warning",
           "message" => "the number of orders exceeds the limit",
-          "url" => BASE_URL.'/Article'
+          "url" => ''
         ]);
       }
       else{
-        $total_weight = ($detail_product['berat'] * $_POST['order_count'] * 1000 );
-        if($data_post['shipping_method'] == 'pickup' ){
-          $data_post['shipping_cost'] = 0;
-          $this->view("Component/verify_order",$data_post);
-        }
-        else{
-          $data_ongkir = new RajaOngkir();
-          foreach ($this->model("User_model")->get_data_kabupaten() as $kabupaten) {
-            if($kabupaten['id'] == $this->model("User_model")->get_data_user($_SESSION['login']['email'])['kabupaten_id']){
-              $kota = $data_ongkir->get_city();
-              $kota_array = json_decode($kota,true);
-              foreach ($kota_array['rajaongkir']['results'] as $kota) {
-                if($kabupaten['nama_kabupaten'] == $kota['city_name']){
-                  $harga = json_decode($data_ongkir->get_cost(160,$kota['city_id'],$total_weight,"pos"),true);
-                  if(isset($harga['rajaongkir']['results'][0]['costs'][0]['cost'][0]['value'])) {
-                    $harga = ($harga['rajaongkir']['results'][0]['costs'][0]['cost'][0]['value']);
-                    $data_post['shipping_cost'] = $harga;
-                    $this->view("Component/verify_order",$data_post);
-                  } else {
-                    $this->view("Component/modal_redirect",$data_alert = [
-                      "type" => false,
-                      "title" => "Warning",
-                      "message" => "the number of orders exceeds the limit",
-                      "url" => BASE_URL.'/Article'
-                    ]);
+        if( $this->model("User_model")->get_data_user($_SESSION['login']['email'])['negara_id'] != 0 ){
+          $total_weight = ($detail_product['berat'] * $_POST['order_count'] * 1000 );
+          if($data_post['shipping_method'] == 'pickup' ){
+            $data_post['shipping_cost'] = 0;
+            $this->view("Component/verify_order",$data_post);
+          }
+          else{
+            $data_ongkir = new RajaOngkir();
+            foreach ($this->model("User_model")->get_data_kabupaten() as $kabupaten) {
+              if($kabupaten['id'] == $this->model("User_model")->get_data_user($_SESSION['login']['email'])['kabupaten_id']){
+                $kota = $data_ongkir->get_city();
+                $kota_array = json_decode($kota,true);
+                foreach ($kota_array['rajaongkir']['results'] as $kota) {
+                  if($kabupaten['nama_kabupaten'] == $kota['city_name']){
+                    $harga = json_decode($data_ongkir->get_cost(160,$kota['city_id'],$total_weight,"pos"),true);
+                    if(isset($harga['rajaongkir']['results'][0]['costs'][0]['cost'][0]['value'])) {
+                      $harga = ($harga['rajaongkir']['results'][0]['costs'][0]['cost'][0]['value']);
+                      $data_post['shipping_cost'] = $harga;
+                      $this->view("Component/verify_order",$data_post);
+                    } else {
+                      $this->view("Component/modal_redirect",$data_alert = [
+                        "type" => false,
+                        "title" => "Warning",
+                        "message" => "the number of orders exceeds the limit",
+                        "url" => ''
+                      ]);
+                    }
+                    break;
                   }
-                  break;
                 }
+                break;
               }
-              break;
             }
           }
         }
+        else{
+          $this->view("Component/modal_redirect",$data_alert = [
+            "type" => false,
+            "title" => "Warning",
+            "message" => "Please fill in the residence data first",
+            "url" => BASE_URL.'/About/edit'
+          ]);
+        }
+        
         
       }
     }
@@ -89,7 +100,7 @@ class Product extends Controller{
         "type" => true,
         "title" => "Success",
         "message" => "order successfully made, account number : ". $this->model("User_model")->get_data_admin()['no_rekening']. " ".$this->model("User_model")->get_data_admin()['nama_lengkap'],
-        "url" => BASE_URL.'/Article'
+        "url" => BASE_URL.'/Order'
       ]);
     }
 
