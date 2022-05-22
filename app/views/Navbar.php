@@ -42,7 +42,7 @@ $photo = $this->model("User_model")->get_data_user($_SESSION['login']['email'])[
   </a>
   <a href="<?= BASE_URL ?>/History" <?php if($_SESSION['controller_name'] == "History" || ( $_SESSION['controller_name'] == "Order" &&  isset($_SESSION['params'][1])  ) ) echo 'style="background-color: rgba(128, 128, 128, 0.315);' ?>">
     <img src="<?= BASE_URL ?>/icon/history.png" alt="">
-    <h4>Order History</h4>
+    <h4>History Order</h4>
   </a>
   <br>
   
