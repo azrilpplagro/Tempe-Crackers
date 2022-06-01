@@ -95,11 +95,18 @@ class Product extends Controller{
     if(isset($_POST['order'])){
       $_POST['tanggal_pesan'] = date("Y-m-d");
       $_POST['batas_pembayaran'] = date('Y-m-d', strtotime("+1 day"));
+      if($_POST['metode_pembayaran'] == 'cod'){
+        $message = "order successfully made";
+      }
+      else{
+        $message = "order successfully made, account number : ". $this->model("User_model")->get_data_admin()['no_rekening']. " ".$this->model("User_model")->get_data_admin()['nama_lengkap'];
+      }
+      
       $this->model("Pesanan_model")->insert_pesanan($_POST);
       $this->view("Component/modal_redirect",$data_alert = [
         "type" => true,
         "title" => "Success",
-        "message" => "order successfully made, account number : ". $this->model("User_model")->get_data_admin()['no_rekening']. " ".$this->model("User_model")->get_data_admin()['nama_lengkap'],
+        "message" => $message,
         "url" => BASE_URL.'/Order'
       ]);
     }

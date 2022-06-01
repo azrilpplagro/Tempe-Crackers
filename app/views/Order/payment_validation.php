@@ -68,7 +68,7 @@ $data_admin = $this->model("User_model")->get_data_admin();
           if($data['detail_order']['status_pembayaran'] == "Belum Lunas"){ ?>
             <td style="color: yellow;background-color:rgb(200, 200, 200);border-radius:15px;padding:0px 20px">Waiting for payment confirmation</td>
           <?php }else if($data['detail_order']['status_pembayaran'] == "Dibatalkan"){  ?>
-            <td style="color: red;background-color:rgb(200, 200, 200);border-radius:15px;padding:0px 20px">Payment validation declined, please re-validate</td>
+            <td style="color: red;background-color:rgb(200, 200, 200);border-radius:15px;padding:0px 20px">Payment validation declined, your proof of payment is invalid</td>
           <?php
           }
           else{ ?>
